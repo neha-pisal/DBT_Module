@@ -1,0 +1,17 @@
+ASSIGNMENT NO. 2 :-
+
+1)Which field of the customer table is the primary key?
+-> Cnum field i.e. Customer number is a primary key of customer table.
+
+2)What is the 4th column of the customer table?
+-> Rating is 4th column of the customer table.
+
+3)What is another word for row? for columns?
+-> In DBMS the rows are also known as record and in RDBMS the row is called as
+   row, tuples, entity, opportunity.
+   The columns are known as field in DBMS and in RDBMS the column is known 
+   as Attribute,column, methods.
+
+
+4)Why isnt it possible to see the first five rows of the table?
+-> Because tuple dont have orders
