@@ -1,0 +1,9 @@
+ASSIGNMENT N0. 3 :-
+
+1)DoeS ANSI recognize the data type DATE?
+->yes the ANSI recognizes the data type date.
+  The default date format is YYYY-MM-DD.
+
+
+2)Which division of SQL is used to insert values in tables?
+-> DML (Data Manupulatoin Language) is used to insert values in tables.
