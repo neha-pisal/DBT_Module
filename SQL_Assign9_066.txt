@@ -1,0 +1,21 @@
+ASSIGNMENT No. 9
+
+1) Write a query that lists each order number followed by the name of the customer 
+   who made the order.
+-> select orders.Onum, customers.Cname from orders, customers where orders.Cnum = customers.Cnum;
+ 
+2) Write a query that gives the names of both the salesperson and the customer for 
+   each order along with the order number. 
+-> select orders.Onum "Order Number", salespeople.Sname "Salespeople Name", customers.Cname "Customers Name" from orders, salespeople, customers 
+   where orders.Snum = salespeople.Snum AND orders.Cnum = customers.Cnum ORDER BY Onum;
+ 
+3) Write a query that produces all customers serviced by salespeople with a 
+   commission above 12%. Output the customer’s name, the salesperson’s name, and 
+   the salesperson’s rate of commission. 
+->  select salespeople.Sname "Salespeople Name", customers.Cname "Customers Name", salespeople.Comm "Commision" from Salespeople, Customers where 
+    salespeople.Snum = customers.Snum AND comm > 0.12 ORDER BY "Salespeople Name" desc;
+ 
+4) Write a query that calculates the amount of the salesperson’s commission on 
+   each order by a customer with a rating above 100. 
+-> select Onum, Amt, Comm from orders, salespeople, customers where orders.snum = salespeople.snum 
+   AND orders.snum = customers.snum AND Rating > 100;
