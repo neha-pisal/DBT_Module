@@ -1,0 +1,43 @@
+EXERCISE NO. 3 :-
+
+1. Display all the Supplier names with the initial letter capital.   
+-> select concat(upper(substr(sname,1,1)),lower(substr(sname,2))) name from supplier;
+
+2. Display all the Supplier names in upper case.   
+-> 1) select upper(Sname) "Suppliers Name" from S;
+   2) select `S#`, upper(Sname) "Suppliers Name", Status, City from S;
+
+3. Display all the Supplier names in lower case.   
+-> 1) select lower(Sname) "Suppliers Name" from S;
+   2) select `S#`, lower(Sname) "Suppliers Name", Status, City from S;
+
+4. Display all the Supplier names padded to 25 characters, with spaces on the left.
+->  select lpad(Sname,25,' ') "Suppliers Name" from S;
+
+5. Display all the Supplier names (with ‘la’ replaced by ‘ro’).        
+   HINT: REPLACE. 
+-> select replace(Sname, 'la', 'ro') from S;
+
+6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ 
+   is replaced with ‘o’.
+-> select replace(replace(Sname, 'l', 'r'), 'o', 'a') as "New names" from S;
+
+7. Display the Supplier names and the lengths of the names.   
+-> select sname "Supplier Name", length(sname) Length from S;
+
+8. Use the soundex function to search for a supplier by the name of ‘BLOKE’.   
+-> select * from S where soundex(Sname)= soundex('BLOKE');
+
+9. Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.).      
+->  select Sname, case
+    when status = 10 then 'Ten'
+    when status = 20 then 'Twenty'
+    when status = 30 then 'Thirty'
+    when status = 40 then 'Fourty'
+    when status = 50 then 'Fifty'
+    else 'Others'
+    end
+    Status from S;
+
+10. Display the current day (e.g. Thursday).
+->  select dayname(sysdate()) "Current Day" from dual;
