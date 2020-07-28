@@ -1,0 +1,50 @@
+EXERCISE NO. 4 :-
+
+1. Display the minimum Status in the Supplier table.
+-> select min(status) "Minimum Status" from S;
+      
+2. Display the maximum Weight in the Parts table. 
+->  select max(weight) "Maximum Weight" from P;
+     
+3. Display the average Weight of the Parts.  
+-> select avg(weight) "Average Weight" from P;
+    
+4. Display the total Quantity sold for part ‘P1’.
+->  select sum(Qty) from spj where `P#` = 'p1';
+      
+5. Display the total Quantity sold for each part. 
+->  select `p#`, sum(Qty) from spj group by `p#`;
+    
+ 6. Display the average Quantity sold for each part. 
+->  select `p#`, avg(Qty) from spj group by `p#`;
+     
+7. Display the maximum Quantity sold for each part, provided the maximum Quantity is greater than 800.      
+->  select `p#`, max(Qty) from spj group by `p#`; 
+
+8. Display the Status and the count of Suppliers with that Status.  
+-> select Status, count(*) "Count of Suppliers" from S GROUP BY status;
+    
+9. Display the count of Projects going on in different cities.
+->  select City, count(*) "Count of Project" from P GROUP BY City;  
+
+10. What is the difference between COUNT(Status) and COUNT(*) ?
+-> COUNT(*) function will return all the rows including duplicates and NULL values
+    but
+   COUNT(Status) does not include it because count(columnname) excludes NULL values.  
+      
+11. Display the Status and the Count of Suppliers with that Status in the following format as shown below:-        
+
+	Status   Count     
+	Ten   	  1     
+	Twenty    2     
+	Thirty    3 
+
+->    select case
+      when Status = 10 Then 'Ten'
+      when Status = 20 Then 'Twenty'
+      when Status = 30 Then 'Thirty'
+      when Status = 40 Then 'Fourty'
+      when Status = 50 Then 'Fifty'
+      when Status = 60 Then 'Sixty'
+      end
+      Status, count(Status) Count from S GROUP BY status;
